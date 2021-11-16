@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import MrjData from "./Components/MrjData";
+import MrjImage from "../src/mrj.png";
 import UpData from "./Components/UpData";
 function App() {
     const url = "https://data.covid19india.org/v4/min/data.min.json";
@@ -74,7 +75,10 @@ function App() {
         setVisible(!visible);
     };
     return (
-        <div id="dark" className="flex flex-col w-screen dark:bg-primary">
+        <div
+            id="dark"
+            className="m-0 p-0 flex flex-col w-screen dark:bg-primary"
+        >
             <div className="mt-5 flex flex-row justify-center dark:bg-primary w-screen text-2xl text-red-800   h-12 text-center align-center center m-auto p-auto">
                 <div className="dark:text-white">
                     <strong>Maharajganj</strong> Corona Tracker
@@ -82,12 +86,12 @@ function App() {
                 <div className="dark:text-white">
                     {visible ? (
                         <FaMoon
-                            className="cursor-pointer"
+                            className="cursor-pointer text-white"
                             onClick={handleButton}
                         />
                     ) : (
                         <FaSun
-                            className="cursor-pointer "
+                            className="cursor-pointer text-primary"
                             onClick={handleButton}
                         />
                     )}
